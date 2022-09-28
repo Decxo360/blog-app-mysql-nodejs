@@ -1,0 +1,12 @@
+{
+  "name": "blog-app-mysql",
+  "version": "1.0.0",
+  "description": "un backend para blog-app",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  }
+}

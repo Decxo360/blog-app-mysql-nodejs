@@ -1,8 +1,4 @@
+const { query } = require('express');
 const express = require('express');
-
-
-const crearUsuario = async(req,res)=>{
-    const {email, nombre, apellido, nickname, password} = req.body;
-
-    
-}
+const dbConexion = require('../db/config');
+const mysql = require('mysql');

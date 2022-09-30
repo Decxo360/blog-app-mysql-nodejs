@@ -12,6 +12,7 @@ app.use(express.static('public'));
 dbConexion();
 
 app.use('/api/users',require('./router/usuario'))
+app.use('/api/publicaciones',require('./router/publicaciones'))
 
 app.listen(process.env.PORT,function(){
     console.log(`puerto libre en ${this.address().port}`)

@@ -1,6 +1,5 @@
 const {Router} = require('express');
 const { insertUser, searchByNickname, getUsuarios } = require('../controllers/usuarios');
-const { dbConexion, conexion } = require('../db/config');
 const router = Router();
 
 

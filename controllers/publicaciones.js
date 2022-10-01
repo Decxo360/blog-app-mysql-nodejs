@@ -61,7 +61,36 @@ const obtenerPublicacionByTitulo = (req,res)=>{
 
 }
 
+const crearPublicacion =(req,res)=>{
+
+    const {titulo,subtitulo,descripcion,idusuario} = req.body
+    const sql = 'INSERT INTO publicaciones (titulo,subtiulo,descripcion,idusuario) Value(?,?,?,?)'
+    const consulta = mysql.format(sql,[titulo,subtitulo,descripcion,idusuario]);
+
+    try{
+
+        conexion.query(consulta,(err,results)=>{
+            if (err) {
+                throw new Error(err);
+                return;
+            }else{
+                res.status(200).json({
+                    ok:true,
+                    msg:'Los datos han sido guardados exitosamente'
+                })
+            }
+        })  
+    }catch(e){
+        res.status(500).json({
+            ok:false,
+            msg:'Por favor hablar con administracion'
+        })
+    }
+
+}
+
 module.exports={
     obtenerPublicaciones,
     obtenerPublicacionByTitulo,
+    crearPublicacion
 }

@@ -129,7 +129,6 @@ const obtenerPublicacionesXIdUsuario = (req,res)=>{
     const idusuario = req.params.idusuario;
     const sql = 'SELECT * FROM publicaciones WHERE(idusuario=?)'
     const consulta = mysql.format(sql,[idusuario])
-
     try{
         conexion.query(consulta,(err,results)=>{
             if(err){

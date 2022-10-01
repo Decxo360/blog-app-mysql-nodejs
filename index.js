@@ -13,6 +13,7 @@ dbConexion();
 
 app.use('/api/users',require('./router/usuario'))
 app.use('/api/publicaciones',require('./router/publicaciones'))
+app.use('/api/auth',require('./router/auth'))
 
 app.listen(process.env.PORT,function(){
     console.log(`puerto libre en ${this.address().port}`)

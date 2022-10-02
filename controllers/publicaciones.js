@@ -100,7 +100,6 @@ const eliminarPublicacion =async(req,res)=>{
                     err
                 })
             }else{
-                    console.log(results)
                 if (results.affectedRows > 0) {
 
                     res.status(200).json({

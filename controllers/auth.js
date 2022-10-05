@@ -4,6 +4,12 @@ const mysql = require('mysql')
 const bcrypt = require('bcryptjs');
 const { generarJWT } = require('../helpers/JWT');
 
+//PASSPORT
+const passport = require('passport');
+
+
+
+
 const login= async(req,res)=>{
 
     const {correo,contrasena} = req.body
@@ -88,12 +94,18 @@ const insertUser = async(req,res)=>{
             msg:'Por favor hablar con administracion '
         })
     }
+}
 
+
+const socialGit =()=>{
+    const sql = 'SELECT * FROM usuarios WHERE(correo = ?)'
+    const sql2 = 'INSERT INTO usuarios (nombre,apellidos,correo,contrasena,nickname)'
 
     
 }
 
 module.exports={
     login,
-    insertUser
+    insertUser,
+    socialGit
 }
